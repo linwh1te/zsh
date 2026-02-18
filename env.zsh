@@ -7,6 +7,7 @@ export PATH="$HOME/.ghcup/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export KUBECONFIG="$HOME/.config/k3s.yaml"
+export STARSHIP_CONFIG="$HOME/.config/zsh/starship.toml"
 
 # direnv
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
