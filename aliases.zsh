@@ -2,7 +2,8 @@
 ## Aliases
 ##
 
-alias 女米="nvim"
+alias s="fastfetch"
+
 alias jdesc="jj desc"
 alias jn="jj new"
 alias jst="jj st"
