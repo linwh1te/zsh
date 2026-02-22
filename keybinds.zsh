@@ -35,3 +35,5 @@ bindkey "^H" backward-delete-char
 bindkey "^U" backward-kill-line
 
 # vim:ft=zsh:nowrap
+
+bindkey '^G' clear-screen
