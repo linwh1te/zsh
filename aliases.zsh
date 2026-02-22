@@ -3,6 +3,7 @@
 ##
 
 alias s="fastfetch"
+alias ta="tmux a"
 
 alias jdesc="jj desc"
 alias jn="jj new"
