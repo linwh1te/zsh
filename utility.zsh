@@ -124,3 +124,32 @@ function git-svn(){
 }
 
 # vim:ft=sh
+
+nrs() {
+  local flake=""
+  local target=""
+  local build=""
+
+  while getopts "f:t:b:" opt; do
+    case $opt in
+      f) flake="$OPTARG" ;;
+      t) target="$OPTARG" ;;
+      b) build="$OPTARG" ;;
+    esac
+  done
+
+  if [[ -z "$flake" || -z "$target" ]]; then
+    echo "Usage: nrs -f <flake> -t <target-host> [-b <build-host>]"
+    return 1
+  fi
+
+  if [[ -z "$build" ]]; then
+    build="$target"
+  fi
+
+  nix shell nixpkgs#nixos-rebuild --command \
+    nixos-rebuild switch \
+    --flake "$flake" \
+    --target-host "$target" \
+    --build-host "$build"
+}
