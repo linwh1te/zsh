@@ -10,6 +10,9 @@ export KUBECONFIG="$HOME/.config/k3s.yaml"
 export STARSHIP_CONFIG="$HOME/.config/zsh/starship.toml"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
+export DIRENV_LOG_FORMAT=''
+eval "$(direnv hook zsh)"
+
 # direnv
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
