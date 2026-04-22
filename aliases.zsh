@@ -4,6 +4,8 @@
 
 alias s="fastfetch"
 alias ta="tmux a"
+alias ts="tailscale"
+alias wol9950="wakeonlan 34:5A:60:4A:C2:40"
 
 alias jdesc="jj desc"
 alias jn="jj new"

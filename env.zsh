@@ -7,14 +7,27 @@ export PATH="$HOME/.ghcup/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export KUBECONFIG="$HOME/.config/k3s.yaml"
-export STARSHIP_CONFIG="$HOME/.config/zsh/starship.toml"
+export starship_config="$home/.config/zsh/starship.toml"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
-export DIRENV_LOG_FORMAT=''
-eval "$(direnv hook zsh)"
+if command -v direnv >/dev/null 2>&1; then
+  export DIRENV_LOG_FORMAT=''
 
-# direnv
-command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+  _direnv_hook() {
+    trap -- '' SIGINT
+    eval "$(direnv export zsh 2> >(command sed -E "s/\x1b\[[0-9;]*m//g" | command grep -v '^direnv:' >&2))"
+    trap - SIGINT
+  }
+
+  typeset -ag precmd_functions chpwd_functions
+  if (( ! ${precmd_functions[(I)_direnv_hook]} )); then
+    precmd_functions+=(_direnv_hook)
+  fi
+  if (( ! ${chpwd_functions[(I)_direnv_hook]} )); then
+    chpwd_functions+=(_direnv_hook)
+  fi
+fi
+
 
 # elan
 if [ -f "$HOME/.elan/env" ]; then
