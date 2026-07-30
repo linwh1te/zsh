@@ -5,6 +5,7 @@
 alias s="fastfetch"
 alias ta="tmux a"
 alias ts="tailscale"
+alias tss='ts status | LC_ALL=C sort -t "." -k4,4n'
 alias wol9950="wakeonlan 34:5A:60:4A:C2:40"
 
 alias jdesc="jj desc"
