@@ -9,6 +9,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export KUBECONFIG="$HOME/.config/k3s.yaml"
 export starship_config="$home/.config/zsh/starship.toml"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export STARSHIP_CONFIG="$HOME/.config/zsh/starship.toml"
 
 if command -v direnv >/dev/null 2>&1; then
   export DIRENV_LOG_FORMAT=''
