@@ -29,6 +29,7 @@ alias p="git add . && git commit -am 'update' && git push -u origin main"
 alias getidf="source ~/esp/esp-idf/export.sh"
 alias brew86="arch -x86_64 /usr/local/homebrew/bin/brew"
 alias lg="lazygit"
+alias claude="claude --allow-dangerously-skip-permissions" # Shift+Tab 可切到 bypassPermissions
 alias kvim="NVIM_APPNAME=kvim nvim"
 alias hvim="NVIM_APPNAME=hvim nvim"
 alias lvim="NVIM_APPNAME=lazyvim nvim"
