@@ -2,6 +2,9 @@
 ## Aliases
 ##
 
+
+alias opc="opencode2"
+alias cld="claude"
 alias s="fastfetch"
 alias ta="tmux a"
 alias ts="tailscale"
