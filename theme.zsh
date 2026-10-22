@@ -1,40 +1,22 @@
-##
-## Aesthetic Night Colorscheme
-##
-# special
-background='#1E1E2E'
-foreground='#CDD6F4'
+# Flat White 配色，供提示符、补全与语法高亮共用。
+background='#323232'
+foreground='#eeeeec'
+selection_bg='#5b5b5b'
+selection_fg='#eeeeec'
 
-# black
-color0='#45475A'
-color8='#585B70'
-
-# red
-color1='#F38BA8'
-color9='#F38BA8'
-
-# green
-color2='#A6E3A1'
-color10='#A6E3A1'
-
-# yellow
-color3='#F9E2AF'
-color11='#F9E2AF'
-
-# blue
-color4='#89B4FA'
-color12='#89B4FA'
-
-# magenta
-color5='#F5C2E7'
-color13='#F5C2E7'
-
-# cyan
-color6='#94E2D5'
-color14='#94E2D5'
-
-# white
-color7='#BAC2DE'
-color15='#A6ADC8'
-
-# vim='iletype'=zsh
+color0='#1f1f1f'
+color1='#d25252'
+color2='#a5c261'
+color3='#ffc66d'
+color4='#6c99bb'
+color5='#d197d9'
+color6='#7fc8c8'
+color7='#eeeeec'
+color8='#7c7c7c'
+color9='#e86f6f'
+color10='#c2e075'
+color11='#e1e48b'
+color12='#8ab7d9'
+color13='#efb5f7'
+color14='#a8e0e0'
+color15='#ffffff'

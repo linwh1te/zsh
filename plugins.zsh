@@ -20,7 +20,7 @@ zinit ice blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
 
 autoload compinit
-compinit
+compinit -d "$XDG_CACHE_HOME/zsh/.zcompdump"
 
 zinit light-mode for \
   hlissner/zsh-autopair \
@@ -48,6 +48,10 @@ zinit light junegunn/fzf-bin
 # zinit light sharkdp/bat
 
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+if [[ -s /opt/homebrew/opt/nvm/nvm.sh ]]; then
+  source /opt/homebrew/opt/nvm/nvm.sh || return
+fi
+if [[ -s /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm ]]; then
+  source /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm || return
+fi
 # vim:ft=zsh

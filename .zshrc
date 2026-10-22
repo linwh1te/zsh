@@ -1,22 +1,11 @@
-## ░▀▀█░█▀▀░█░█░█▀▄░█▀▀
-## ░▄▀░░▀▀█░█▀█░█▀▄░█░░
-## ░▀▀▀░▀▀▀░▀░▀░▀░▀░▀▀▀
-##
-## rxyhn's Z-Shell configuration
-## https://github.com/rxyhn
+for _zsh_part in theme env aliases utility options plugins keybinds highlight; do
+  source "$ZDOTDIR/$_zsh_part.zsh" || return
+done
+unset _zsh_part
 
-while read file
-do 
-  source "$ZDOTDIR/$file.zsh"
-done <<-EOF
-theme
-env
-aliases
-utility
-options
-plugins
-keybinds
-prompt
-EOF
+# Home Manager 提供已启用工具的集成配置。
+if [[ -f "$ZDOTDIR/hm-integration.zsh" ]]; then
+  source "$ZDOTDIR/hm-integration.zsh" || return
+fi
 
-# vim:ft=zsh:nowrap
+source "$ZDOTDIR/prompt.zsh"

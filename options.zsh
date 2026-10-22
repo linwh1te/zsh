@@ -26,9 +26,11 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
+zstyle ':fzf-tab:*' fzf-flags "--color=$FZF_COLORS"
 
 # History
 HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
+mkdir -p "${HISTFILE:h}"
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -48,7 +50,8 @@ fi
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor regexp root line)
 ZSH_HIGHLIGHT_MAXLENGTH=512
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$color8,bold"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$color8"
+zle_highlight=("region:fg=$selection_fg,bg=$selection_bg" "paste:fg=$selection_fg,bg=$selection_bg")
 
 while read -r opt
 do 

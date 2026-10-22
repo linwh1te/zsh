@@ -2,6 +2,28 @@
 right_format = """$time$battery"""
 command_timeout = 10000
 add_newline = true
+palette = "flat-white"
+
+[palettes.flat-white]
+black = "#1f1f1f"
+red = "#d25252"
+green = "#a5c261"
+yellow = "#ffc66d"
+blue = "#6c99bb"
+purple = "#d197d9"
+cyan = "#7fc8c8"
+white = "#eeeeec"
+bright-black = "#7c7c7c"
+bright-red = "#e86f6f"
+bright-green = "#c2e075"
+bright-yellow = "#e1e48b"
+bright-blue = "#8ab7d9"
+bright-purple = "#efb5f7"
+bright-cyan = "#a8e0e0"
+bright-white = "#ffffff"
+bg = "#323232"
+fg = "#eeeeec"
+muted = "#7c7c7c"
 
 [container]
 format = '[$symbol \[$name\]]($style) '
@@ -130,4 +152,3 @@ symbol = '🐍 '
 format = 'via [$symbol $version](red bold)'
 symbol = '🦀'
 #symbol = " "
-
